@@ -1,14 +1,17 @@
 import {Result} from "antd";
+import {UserProvider} from "../hocs/UserProvider";
 
 export const EthereumProvider = (props) => {
-    const { ethereum } = window;
+    const {ethereum} = window;
 
     if (!ethereum) {
-        return  <Result
+        return <Result
             status="warning"
             title="For using application install Metamask"
         />
     }
 
-    return props.children;
+    return <UserProvider>
+        {props.children}
+    </UserProvider>;
 }

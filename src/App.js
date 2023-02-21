@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import {EthereumProvider} from "./containers/EthereumProvider";
+import {UserProfile} from "./components/UserProfile";
+import {LastVotes} from "./components/LastVotes";
+import {Space} from "antd";
+import {CreateVote} from "./components/CreateVote";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (<EthereumProvider>
+        <Space direction="vertical" size="middle" style={{display: 'flex', margin: '20px'}}>
+            <UserProfile/>
+            <LastVotes/>
+            <CreateVote/>
+        </Space>
+    </EthereumProvider>)
 }
 
 export default App;
