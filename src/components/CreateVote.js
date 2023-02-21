@@ -23,7 +23,7 @@ export const CreateVote = withProvider(({contracts}) => {
             setVoteCreationHash(result.hash);
             console.log(result);
         } catch (e) {
-            console.log(e);
+            console.error(e);
             messageApi.open({
                 type: 'error',
                 content: e.reason,

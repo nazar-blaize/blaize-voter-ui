@@ -26,7 +26,7 @@ export const UserProfile = withProvider(({contracts}) => {
             console.log(values)
             await register(values.firstName, values.lastName, values.governmentId);
         } catch (e) {
-            console.log(e);
+            console.error(e);
             messageApi.open({
                 type: 'error',
                 content: e.reason,

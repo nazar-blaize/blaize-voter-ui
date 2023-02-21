@@ -36,7 +36,7 @@ export const UserProvider = withProvider(({provider, children}) => {
             await checkNetwork();
             setAccount(accounts[0]);
         } catch (err) {
-            console.log(err)
+            console.error(err)
         } finally {
             setAccountConnecting(true);
         }
